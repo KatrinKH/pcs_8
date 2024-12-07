@@ -62,21 +62,26 @@ class _NotePageState extends State<NotePage> {
             Center(
               child: Image.network(widget.product.imageUrl, width: 340, height: 260), // Отображаем картинку
             ),
-            SizedBox(height: 16),
             // Text('Дата релиза: ${widget.product.releaseDate}', style: TextStyle(fontSize: 16)),
             // SizedBox(height: 8),
             // Text('Производитель: ${widget.product.developer}', style: TextStyle(fontSize: 16)),
             // SizedBox(height: 8),
             // Text('Жанр: ${widget.product.genre}', style: TextStyle(fontSize: 16)),
             // SizedBox(height: 8),
+            SizedBox(height: 16),
+            // Цена
             Text(
-              'Цена: ${widget.product.price}P', // Цена
+              'Цена: ${widget.product.price}P', 
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 8),
+            // Описание продукта с учетом переноса строк и обрезки
             Text(
-              'Описание: ${widget.product.description}', // Описание
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              'Описание: ${widget.product.description}', 
+              style: TextStyle(fontSize: 16),
+              maxLines: 6, // Максимум 6 строк, чтобы предотвратить переполнение
+              overflow: TextOverflow.ellipsis, // Если текст длинный, обрезаем его
+              softWrap: true, // Автоматический перенос текста
             ),
             SizedBox(height: 16),
             Center(
